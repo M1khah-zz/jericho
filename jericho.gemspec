@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{"Epic gem"}
   spec.description   = %q{"Epic stuff"}
-  spec.homepage      = "https://rubygems.org"
+  spec.homepage      = "https://github.com/M1khah/jericho"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
