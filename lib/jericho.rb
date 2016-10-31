@@ -1,5 +1,7 @@
 require "jericho/version"
 
 module Jericho
-  puts "A very epic hello world"
+  def hello_world
+    puts "A very epic hello world"
+  end
 end
