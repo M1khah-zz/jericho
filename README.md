@@ -21,9 +21,11 @@ Or install it yourself as:
     $ gem install jericho
 
 ## Usage
+Small simple gem to clear you cucumber ```.json``` reports of redundant info and post results to Slack
 
-TODO: Write usage instructions here
+Add ```purify``` and ```repent``` calls to ```at_exit``` hook of your test suite and enjoy
 
+Note that gem uses ```slack_ruby_client``` and ```dotenv``` to work properly
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -38,4 +40,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
