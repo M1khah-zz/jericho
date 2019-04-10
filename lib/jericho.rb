@@ -2,30 +2,30 @@ require "jericho/version"
 
 module Jericho
   def self.reporter(parsed_report)
-    list_of_scenarios_purifys = {}
+    list_of_scenarios_reports = {}
     parsed_report.each do |element|
       element['elements'].each do |scenario|
         scenario_status = 'Passed'
         scenario['steps'].each do |step|
           scenario_status = 'Failed' if step['purify']['status'] != 'passed'
         end
-        list_of_scenarios_purifys[(scenario['name']).to_s] = scenario_status
+        list_of_scenarios_reports[(scenario['name']).to_s] = scenario_status
       end
     end
-    list_of_scenarios_purifys
+    list_of_scenarios_reports
   end
 
-  def self.comparison_reporter(list_of_scenarios_purifys1, list_of_scenarios_purifys2)
-    failed_tests = list_of_scenarios_purifys2.select { |k, v| v == 'Failed' }.map do |k, v|
+  def self.comparison_reporter(list_of_scenarios_reports1, list_of_scenarios_reports2)
+    failed_tests = list_of_scenarios_reports2.select { |k, v| v == 'Failed' }.map do |k, v|
       {
         test_name: k === '' ? k = 'Background' : k,
         actual_status: v,
-        previous_status: list_of_scenarios_purifys1[k]
+        previous_status: list_of_scenarios_reports1[k]
       }.reject { |_k, v| v.nil? }
     end
 
     {
-      passed: list_of_scenarios_purifys2.size - failed_tests.size,
+      passed: list_of_scenarios_reports2.size - failed_tests.size,
       failed: failed_tests.size,
       failed_tests: failed_tests
     }
