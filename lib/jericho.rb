@@ -7,7 +7,7 @@ module Jericho
       element['elements'].each do |scenario|
         scenario_status = 'Passed'
         scenario['steps'].each do |step|
-          scenario_status = 'Failed' if step['purify']['status'] != 'passed'
+          scenario_status = 'Failed' if step['result']['status'] != 'passed'
         end
         list_of_scenarios_reports[(scenario['name']).to_s] = scenario_status
       end
