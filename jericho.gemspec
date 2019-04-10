@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kirill"]
   spec.email         = ["alexeyenko92@gmail.com"]
 
-  spec.summary       = %q{"Epic gem"}
-  spec.description   = %q{"Epic stuff"}
+  spec.summary       = %q{"Additional gem for cucumber tests"}
+  spec.description   = %q{"Tiny simple gem which cleans your cucumber JSON reports from redundant info and compares report from your last test run and report from previous test run. After it you'll receive a test run summary to desired slack channel. Please note that in rder to use slack integration - you'll need to configure dotenv gem with your Slack credentials"}
   spec.homepage      = "https://github.com/M1khah/jericho"
   spec.license       = "MIT"
 

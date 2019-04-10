@@ -23,9 +23,13 @@ Or install it yourself as:
 ## Usage
 Small simple gem to clear you cucumber ```.json``` reports of redundant info and post results to Slack
 
-Add ```purify``` and ```repent``` calls to ```at_exit``` hook of your test suite and enjoy
+Add ```Jericho.purify``` and ```Jericho.repent``` calls to ```at_exit``` hook of your Cucumber test suite and enjoy
 
 Note that gem uses ```slack_ruby_client``` and ```dotenv``` to work properly
+
+For gem to work properly:
+1. Add it to your Gemfile (```gem 'jericho'```) and require it in your ```env.rb``` file (```require  'jericho'```)
+2. Run your cucumber scenarios with ```cucumber --format json --out report" $(date)".json --format html --out report" $(date)".html --format pretty``` bash script
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
