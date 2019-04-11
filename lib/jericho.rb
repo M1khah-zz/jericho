@@ -43,7 +43,7 @@ module Jericho
     client.chat_postMessage(
       channel: '#autotests',
       text:
-      "Test run purifys for #{$driver.caps[:deviceName]}, #{$driver.caps[:platformName]} #{$driver.caps[:platformVersion]}:
+      "Test run results for #{$driver.caps[:deviceName]}, #{$driver.caps[:platformName]} #{$driver.caps[:platformVersion]}:
       Passed tests count: #{purify[:passed]},
       Failed tests count: #{purify[:failed]},",
       attachments: [
