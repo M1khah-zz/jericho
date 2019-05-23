@@ -15,6 +15,13 @@ module Jericho
     list_of_scenarios_reports
   end
 
+  def self.get_jenkins_job_name
+    file = File.open('logfile.txt')
+    file.each_line do |line|
+      puts line
+    end
+  end
+
   def self.comparison_reporter(list_of_scenarios_reports1, list_of_scenarios_reports2)
     failed_tests = list_of_scenarios_reports2.select { |k, v| v == 'Failed' }.map do |k, v|
       {
@@ -43,7 +50,7 @@ module Jericho
     client.chat_postMessage(
       channel: '#autotests',
       text:
-      "Test run results for #{$driver.caps[:deviceName]}, #{$driver.caps[:platformName]} #{$driver.caps[:platformVersion]}:
+      "Test run results for #{get_jenkins_job_name} #{$driver.caps[:deviceName]}, #{$driver.caps[:platformName]} #{$driver.caps[:platformVersion]}:
       Passed tests count: #{purify[:passed]},
       Failed tests count: #{purify[:failed]},",
       attachments: [
