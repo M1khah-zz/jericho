@@ -16,8 +16,10 @@ module Jericho
   end
 
   def self.get_jenkins_job_name
+    name = ''
     file = File.open('logfile.txt')
-    file.map {|line| puts line}
+    file.map {|line| name += line}
+    return name.chomp
   end
 
   def self.comparison_reporter(list_of_scenarios_reports1, list_of_scenarios_reports2)
