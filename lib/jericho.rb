@@ -48,7 +48,7 @@ module Jericho
   def self.repent
     client = Slack::Web::Client.new
     client.chat_postMessage(
-      channel: '#autotests',
+      channel: '#ios_autotests_reports',
       text:
       "Test run results for #{get_jenkins_job_name} #{$driver.caps[:deviceName]}, #{$driver.caps[:platformName]} #{$driver.caps[:platformVersion]}:
       Passed tests count: #{purify[:passed]},
