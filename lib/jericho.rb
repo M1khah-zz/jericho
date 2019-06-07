@@ -56,7 +56,7 @@ module Jericho
       attachments: [
         {
          text: "*Failed tests*:
-#{'Test name and previous status:' + ("\n") + purify[:failed_tests].map { |t| t.values_at(:test_name, :previous_status) }.join("\n") }
+#{'Test name :' + ("\n") + purify[:failed_tests].map { |t| t.values_at(:test_name) }.join("\n") }
           ",
         color: 'danger'
       }
